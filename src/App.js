@@ -30,14 +30,6 @@ class App extends React.Component {
           ...prevState.contacts.filter(contact => contact.id !== currentId),
         ],
       };
-      // let indx = null;
-      // for (let i = 0; i < prevState.contacts.length; i += 1) {
-      //   if (prevState.contacts[i].id === currentId) {
-      //     indx = i;
-      //   }
-      // }
-      // prevState.contacts.splice(indx, 1);
-      // return { contacts: [...prevState.contacts] };
     });
   };
 
@@ -53,6 +45,28 @@ class App extends React.Component {
     );
   };
 
+  //-- Local storage
+  componentDidMount() {
+    console.log('App componentDidMount');
+
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+
+    console.log(parsedContacts);
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log('componentDidUpdate');
+    if (this.state.contacts !== prevState.contacts) {
+      console.log('обновились contacts');
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+    console.log(prevState);
+    console.log(this.state);
+  }
+  /////
   render() {
     return (
       <Container title="Phonebook">

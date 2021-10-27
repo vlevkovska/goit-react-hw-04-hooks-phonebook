@@ -1,0 +1,19 @@
+/* .list {
+  width: 332px;
+  padding-left: 20px;
+  color: #404040;
+} */
+/* .item {
+  display: flex;
+  justify-content: space-between;
+}
+.item:not(:last-child) {
+  margin-bottom: 10px;
+} */
+
+.list {
+  width: 332px;
+  /* height: 24px; */
+  padding-left: 20px;
+  color: #404040;
+}

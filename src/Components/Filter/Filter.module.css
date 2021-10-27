@@ -1,0 +1,13 @@
+.label {
+  color: #404040;
+}
+.input {
+  margin-left: 20px;
+  outline: none;
+  border: 1px solid #404040;
+}
+
+.input:hover,
+.input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}

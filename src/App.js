@@ -4,7 +4,7 @@ import Section from './Components/Section';
 import ContactForm from './Components/ContactForm';
 import Filter from './Components/Filter';
 import ContactList from './Components/ContactList';
-import useLocalStorage from './Components/hooks/hooks';
+import useLocalStorage from './hooks/hooks';
 
 function App() {
   const [contacts, setContacts] = useLocalStorage('contacts', []);
